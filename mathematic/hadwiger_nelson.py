@@ -57,7 +57,7 @@ def get_HN_image(num_of_colors=3):
 
     # for x in range(WIDTH):
     # for y in range(HEIGHT):
-    for i in range(1000000):
+    for i in range(10000):
         x = int(random.random() * WIDTH)
         y = int(random.random() * HEIGHT)
         image[y][x] = get_pixel_by_NH(image, colors, x, y)
@@ -68,7 +68,7 @@ def get_HN_image(num_of_colors=3):
 def main():
     disp_img = Image.fromarray(get_HN_image(NUM_OF_COLORS), 'RGB')
     disp_img.show()
-    disp_img.save("test", "bmp")
+    disp_img.save("test.bmp", "bmp")
 
   
 if __name__== "__main__":

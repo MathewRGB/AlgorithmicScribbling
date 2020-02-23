@@ -86,7 +86,7 @@ def pi(n):
 
     for i in range(1, n):
         counter_list.append(prime_counter)
-        if check_for_prime(i):
+        if is_prime(i):
             prime_counter += 1
 
     return counter_list
