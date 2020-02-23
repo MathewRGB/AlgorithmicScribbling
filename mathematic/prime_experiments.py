@@ -3,22 +3,12 @@ import math
 import random
 
 
-def check_for_prime(number):
-    if number == 1 or number == 2 or number == 3:
+
+def is_prime(number):
+    if number in {1, 2, 3}:
         return True
 
     for num in range(2, int(math.sqrt(number) + 1)):
-        if (number % num) == 0:
-            return False
-
-    return True
-
-
-def check_for_prime_naiv(number):
-    if number == 1 or number == 2 or number == 3:
-        return True
-
-    for num in range(2, int(number / 2)):
         if (number % num) == 0:
             return False
 
@@ -29,15 +19,12 @@ def get_prime_by_n(n):
     prime_counter = 2
     current_number = 1
 
-    if (n == 1):
-        return 1
+    if n == 1 or n == 2:
+        return n
 
-    if (n == 2):
-        return 2
-
-    while (prime_counter != n):
+    while prime_counter != n:
         current_number += 2
-        if check_for_prime(current_number):
+        if is_prime(current_number):
             prime_counter += 1
 
     return current_number
@@ -133,15 +120,20 @@ def random_walk(n):
     return counter_list
 
 
-# draw the figure so the animations will work
-fig = plt.gcf()
-fig.show()
-fig.canvas.draw()
-
-for i in range(1000):
-    plt.step(range(10000), random_walk(10000))
-    # update canvas immediately
-    plt.xlim([0, 10000])
-    plt.ylim([-250, 250])
-    plt.pause(1)  # I ain't needed!!!
+def main():
+    # draw the figure so the animations will work
+    fig = plt.gcf()
+    fig.show()
     fig.canvas.draw()
+
+    for i in range(1000):
+        plt.step(range(10000), random_walk(10000))
+        # update canvas immediately
+        plt.xlim([0, 10000])
+        plt.ylim([-250, 250])
+        plt.pause(1)  # I ain't needed!!!
+        fig.canvas.draw()
+
+  
+if __name__== "__main__":
+  main()

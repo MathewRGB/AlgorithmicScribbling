@@ -65,6 +65,11 @@ def get_HN_image(num_of_colors=3):
     return image
 
 
-disp_img = Image.fromarray(get_HN_image(NUM_OF_COLORS), 'RGB')
-disp_img.show()
-disp_img.save("test", "bmp")
+def main():
+    disp_img = Image.fromarray(get_HN_image(NUM_OF_COLORS), 'RGB')
+    disp_img.show()
+    disp_img.save("test", "bmp")
+
+  
+if __name__== "__main__":
+  main()
