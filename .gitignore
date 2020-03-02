@@ -2,6 +2,7 @@
 *egg-info
 venv
 env
+__pycache__
 
 # vscode
 .vscode
