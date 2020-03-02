@@ -1,2 +1,3 @@
 # AlgorithmicScribbling
-A collection of things i always want to know.
+
+A collection and playground for mathematical things.
